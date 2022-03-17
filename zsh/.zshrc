@@ -36,7 +36,6 @@ export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_RESULTS_SORT=LAST_RUN
 
 source /home/vomidug/.config/zsh/.p10k.zsh
-source /home/vomidug/.config/zsh/plugins/tmux.plugin.zsh
 source /home/vomidug/.config/zsh/plugins/web-search.plugin.zsh
 source /home/vomidug/.config/zsh/plugins/sudo.plugin.zsh
 source /home/vomidug/.config/zsh/plugins/git.plugin.zsh
@@ -56,3 +55,16 @@ alias v="vim"
 
 eval "$(mcfly init zsh)"
 setopt appendhistory
+
+if [[ -z "$TMUX" && -z "$VIM" ]]; then
+	if [[ -z $(tmux list-session 2>/dev/null) ]]
+	then
+		tmux;
+	else
+		tmux attach;
+	fi
+fi
+
+if [ $(tmux list-windows | grep -i active | cut -d '*' -f1 | cut -d ' ' -f2) = "prod" ]; then
+	ssh prod
+fi
