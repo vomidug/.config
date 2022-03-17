@@ -10,6 +10,11 @@ git_version="${${(As: :)$(git version 2>/dev/null)}[3]}"
 # Back-compatibility wrapper for when this function was defined here in
 # the plugin, before being pulled in to core lib/git.zsh as git_current_branch()
 # to fix the core -> git plugin dependency.
+
+function git_current_branch() {
+	git branch --show-current
+}
+
 function current_branch() {
   git_current_branch
 }
