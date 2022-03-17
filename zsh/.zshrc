@@ -43,15 +43,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-alias ls="ls --color=auto"
-alias -g G="| grep"
-alias -g Gi="| grep -i"
-alias -g L="| less"
-alias yay="paru"
-alias lra="ls -lRah"
-alias cat="bat"
-alias a="alias"
-alias v="vim"
+source $ZDOTDIR/.zsh_aliases
 
 eval "$(mcfly init zsh)"
 setopt appendhistory
