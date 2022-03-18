@@ -77,3 +77,5 @@ fi
 if [ $(tmux list-windows | grep -i active | cut -d '*' -f1 | cut -d ' ' -f2) = "prod" ]; then
 	ssh prod
 fi
+
+PATH=${PATH}:/home/vomidug/.local/bin
