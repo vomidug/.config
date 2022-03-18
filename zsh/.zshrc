@@ -74,8 +74,6 @@ if [[ -z "$TMUX" && -z "$VIM" ]]; then
 	fi
 fi
 
-if [ $(tmux list-windows | grep -i active | cut -d '*' -f1 | cut -d ' ' -f2) = "prod" ]; then
-	ssh prod
-fi
+source /home/vomidug/.config/zsh/plugins/tmux-name.plugin.zsh
 
 PATH=${PATH}:/home/vomidug/.local/bin
