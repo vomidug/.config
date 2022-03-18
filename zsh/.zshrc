@@ -38,6 +38,7 @@ export MCFLY_RESULTS_SORT=LAST_RUN
 source /home/vomidug/.config/zsh/.p10k.zsh
 source /home/vomidug/.config/zsh/plugins/web-search.plugin.zsh
 source /home/vomidug/.config/zsh/plugins/sudo.plugin.zsh
+source /home/vomidug/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 source /home/vomidug/.config/zsh/plugins/git.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
