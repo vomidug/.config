@@ -44,6 +44,22 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
+source /home/vomidug/.config/zsh/.secret
+
+ZSH_WEB_SEARCH_ENGINES=(
+	jira $JOBURL 
+)
+alias jira="web_search jira"
+
+function ticket() {
+	branch=$(git branch --show-current 2>/dev/null)
+	if [[ -z $branch ]]; then
+		echo "not a repo"
+	else;
+		jira $(git branch --show-current)
+	fi;
+}
+
 source $ZDOTDIR/.zsh_aliases
 
 eval "$(mcfly init zsh)"
