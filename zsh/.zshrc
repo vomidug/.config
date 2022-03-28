@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+unsetopt BEEP
+
 autoload -Uz compinit promptinit
 compinit -d ${XDG_CACHE_HOME}/.zcompdump
 promptinit
@@ -25,6 +27,7 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'
 export LS_COLORS='no=0;37:di=1;38;5;39:fi=37:*.gz=01;31:ex=1;32:ln=01;93'
 export AWS_CONFIG_FILE=$HOME/.config/aws/config
+export MYVIMRC=$HOME/.config/vim/.vimrc
 HISTFILE=${XDG_STATE_HOME}/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -75,5 +78,7 @@ if [[ -z "$TMUX" && -z "$VIM" ]]; then
 fi
 
 source /home/vomidug/.config/zsh/plugins/tmux-name.plugin.zsh
+
+sed -i "/10.0.21/d" ~/.ssh/known_hosts
 
 PATH=${PATH}:/home/vomidug/.local/bin
