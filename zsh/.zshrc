@@ -82,3 +82,4 @@ source /home/vomidug/.config/zsh/plugins/tmux-name.plugin.zsh
 sed -i "/10.0.21/d" ~/.ssh/known_hosts
 
 PATH=${PATH}:/home/vomidug/.local/bin
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
