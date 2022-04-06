@@ -1,3 +1,4 @@
 .secret
 glab-cli/
 aws/
+configstore/
