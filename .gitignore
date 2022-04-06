@@ -1,4 +1,6 @@
-.secret
-glab-cli/
-aws/
-configstore/
+*
+*/
+!.secret
+!glab-cli/
+!aws/
+!configstore/
