@@ -4,6 +4,6 @@
 !glab-cli/
 !aws/
 !configstore/
-!tmux
-!zsh
-!vim
+!tmux/
+!zsh/
+!vim/
