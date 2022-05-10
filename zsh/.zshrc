@@ -1,3 +1,7 @@
+if [ -z "$TMUX" ]; then
+	tmux new-window -t main;
+	exec tmux attach -t main
+fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -68,18 +72,9 @@ source $ZDOTDIR/.zsh_aliases
 eval "$(mcfly init zsh)"
 setopt appendhistory
 
-if [[ -z "$TMUX" && -z "$VIM" ]]; then
-	if [[ -z $(tmux list-session 2>/dev/null) ]]
-	then
-		tmux;
-	else
-		tmux attach;
-	fi
-fi
-
 source /home/vomidug/.config/zsh/plugins/tmux-name.plugin.zsh
 
 sed -i "/10.0.21/d" ~/.ssh/known_hosts
 
 PATH=${PATH}:/home/vomidug/.local/bin
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+#export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
