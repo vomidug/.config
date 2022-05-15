@@ -92,7 +92,7 @@ alias image='web_search duckduckgo \!i'
 alias ducky='web_search duckduckgo \!'
 
 # other search engine aliases
-if [[ ${#ZSH_WEB_SEARCH_ENGINES} -gt 0 ]]; then
+if [[ ${ZSH_WEB_SEARCH_ENGINES} -gt 0 ]]; then
   typeset -A engines
   engines=($ZSH_WEB_SEARCH_ENGINES)
   for key in ${(k)engines}; do
