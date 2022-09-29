@@ -18,6 +18,8 @@ autoload -U select-word-style
 select-word-style bash
 
 bindkey -e
+bindkey "^[[3~" delete-char
+
 
 zstyle ':completion:*' list-colors “${(s.:.)LS_COLORS}”
 
